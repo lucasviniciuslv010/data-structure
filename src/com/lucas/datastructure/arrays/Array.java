@@ -19,4 +19,19 @@ public class Array<T> implements Serializable {
 	public Array(int capacity) {
 		this.elements = (T[]) new Object[capacity];
 	}
+	
+	public T get(int index) {
+		if (index < 0 || index >= elements.length) {
+			throw new IllegalArgumentException();
+		}
+		return elements[index];
+	}
+	
+	public boolean add(T element) {
+		if (elements.length == size) {
+			throw new ArrayIndexOutOfBoundsException();
+		}
+		elements[size++] = element;
+		return true;
+	}
 }
