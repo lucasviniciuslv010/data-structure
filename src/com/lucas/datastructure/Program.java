@@ -6,7 +6,7 @@ public class Program {
 
 	public static void main(String[] args) {
 		
-		Array<String> array = new Array<>();
+		Array<String> array = new Array<>(4);
 		
 		array.add("A");
 		array.add("B");
@@ -17,5 +17,6 @@ public class Program {
 		System.out.println(array.get(1));
 		System.out.println(array.get(2));
 		System.out.println(array.get(3));
+		// System.out.println(array.get(4)); -> ERROR, INVALID INDEX
 	}
 }

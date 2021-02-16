@@ -21,10 +21,13 @@ public class Array<T> implements Serializable {
 	}
 	
 	public T get(int index) {
-		if (index < 0 || index >= elements.length) {
-			throw new IllegalArgumentException();
-		}
+		checkIfTheIndexWasUsed(index);
 		return elements[index];
+	}
+	
+	public void set(int index, T element) {
+		checkIfTheIndexWasUsed(index);
+		elements[index] = element;
 	}
 	
 	public boolean add(T element) {
@@ -33,5 +36,17 @@ public class Array<T> implements Serializable {
 		}
 		elements[size++] = element;
 		return true;
+	}
+	
+	public void checkIfTheIndexWasUsed(int index) {
+		if (!(index >= 0 && index < size)) {
+			throw new ArrayIndexOutOfBoundsException();
+		}
+	}
+	
+	public void checkIndexAvailability(int index) {
+		if (!(index >= 0 && index <= size)) {
+			throw new ArrayIndexOutOfBoundsException();
+		}
 	}
 }
