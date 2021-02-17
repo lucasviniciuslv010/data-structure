@@ -54,6 +54,15 @@ public class Array<T> implements Serializable {
 		return size == 0;
 	}
 	
+	public int indexOf(String element) {
+		for (int i = 0; i < size; i++) {
+			if (elements[i].equals(element)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+	
 	public void ensureCapacity() {
 		if (size == elements.length) {
 			T newElements[] = (T[]) new Object[(size + 1) * 2];
