@@ -20,8 +20,10 @@ public class Program {
 		list.add("H");
 		list.add("I");
 		list.add("J");
-		list.add(5, "AQUI");
+		list.add("K");
 
 		Array<String> array = new Array<String>(list);
+		
+		System.out.println(array.lastIndexOf("A"));
 	}
 }
