@@ -24,6 +24,6 @@ public class Program {
 
 		Array<String> array = new Array<String>(list);
 		
-		System.out.println(array.lastIndexOf("A"));
+		System.out.println(array);
 	}
 }

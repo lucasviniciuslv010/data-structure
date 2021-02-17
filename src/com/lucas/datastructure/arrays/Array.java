@@ -123,4 +123,17 @@ public class Array<T> implements Serializable {
 			throw new ArrayIndexOutOfBoundsException();
 		}
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("[");
+		for (int i = 0; i < size - 1; i++) {
+			sb.append(elements[i]);
+			sb.append(", ");
+		}
+		sb.append(elements[size - 1]);
+		sb.append("]");
+		return sb.toString();
+	}
 }
