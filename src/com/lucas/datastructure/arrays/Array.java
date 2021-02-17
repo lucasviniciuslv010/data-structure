@@ -46,6 +46,17 @@ public class Array<T> implements Serializable {
 		size++;
 	}
 	
+	public void remove(String element) {
+		int index = indexOf(element);
+		if (index >= 0) {
+			for (int i = index; i < size - 1; i++) {
+				elements[i] = elements[i + 1];
+			}
+			elements[size - 1] = null;
+			size--;
+		}
+	}
+	
 	public int size() {
 		return size;
 	}
