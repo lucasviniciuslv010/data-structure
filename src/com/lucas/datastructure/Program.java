@@ -20,10 +20,7 @@ public class Program {
 		array.add("J");
 		array.add(5, "AQUI");
 		
-		array.remove("G");
+		array.trimToSize();
 		
-		for (int i = 0; i < array.size(); i++) {
-			System.out.println(array.get(i));
-		}
 	}
 }

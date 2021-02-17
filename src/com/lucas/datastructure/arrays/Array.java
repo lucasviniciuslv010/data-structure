@@ -74,6 +74,12 @@ public class Array<T> implements Serializable {
 		return -1;
 	}
 	
+	public void trimToSize() {
+		T[] newElements = (T[]) new Object[size];
+		System.arraycopy(elements, 0, newElements, 0, size);
+		elements = newElements;
+	}
+	
 	public void ensureCapacity() {
 		if (size == elements.length) {
 			T newElements[] = (T[]) new Object[(size + 1) * 2];
