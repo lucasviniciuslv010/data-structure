@@ -36,6 +36,14 @@ public class Array<T> implements Serializable {
 		return true;
 	}
 	
+	public int size() {
+		return size;
+	}
+	
+	public boolean isEmpty() {
+		return size == 0;
+	}
+	
 	public void ensureCapacity() {
 		if (size == elements.length) {
 			T newElements[] = (T[]) new Object[(size + 1) * 2];
