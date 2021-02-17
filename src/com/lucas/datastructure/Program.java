@@ -18,11 +18,10 @@ public class Program {
 		array.add("H");
 		array.add("I");
 		array.add("J");
+		array.add(5, "AQUI");
 		
-		System.out.println(array.get(0));
-		System.out.println(array.get(1));
-		System.out.println(array.get(2));
-		System.out.println(array.get(3));
-		System.out.println(array.get(4));
+		for (int i = 0; i < array.size(); i++) {
+			System.out.println(array.get(i));
+		}
 	}
 }

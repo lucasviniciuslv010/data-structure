@@ -36,6 +36,16 @@ public class Array<T> implements Serializable {
 		return true;
 	}
 	
+	public void add(int index, T element) {
+		checkIndexAvailability(index);
+		ensureCapacity();
+		for (int i = size; i > index; i--) {
+			elements[i] = elements[i - 1];
+		}
+		elements[index] = element;
+		size++;
+	}
+	
 	public int size() {
 		return size;
 	}
