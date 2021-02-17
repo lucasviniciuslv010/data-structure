@@ -31,11 +31,17 @@ public class Array<T> implements Serializable {
 	}
 	
 	public boolean add(T element) {
-		if (elements.length == size) {
-			throw new ArrayIndexOutOfBoundsException();
-		}
+		ensureCapacity();
 		elements[size++] = element;
 		return true;
+	}
+	
+	public void ensureCapacity() {
+		if (size == elements.length) {
+			T newElements[] = (T[]) new Object[(size + 1) * 2];
+			System.arraycopy(elements, 0, newElements, 0, size);
+			elements = newElements;
+		}
 	}
 	
 	public void checkIfTheIndexWasUsed(int index) {
