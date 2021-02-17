@@ -24,6 +24,8 @@ public class Program {
 
 		Array<String> array = new Array<String>(list);
 		
+		array.remove(5);
+		
 		System.out.println(array);
 	}
 }
