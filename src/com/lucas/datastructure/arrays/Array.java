@@ -119,6 +119,13 @@ public class Array<T> implements Serializable {
 			elements = newElements;
 		}
 	}
+	
+	public void clear() {
+		for (int i = 0; i < size; i++) {
+			elements[i] = null;
+		}
+		size = 0;
+	}
 
 	public void checkIfTheIndexWasUsed(int index) {
 		if (!(index >= 0 && index < size)) {
@@ -136,11 +143,13 @@ public class Array<T> implements Serializable {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("[");
-		for (int i = 0; i < size - 1; i++) {
-			sb.append(elements[i]);
-			sb.append(", ");
+		if (size != 0) {
+			for (int i = 0; i < size - 1; i++) {
+				sb.append(elements[i]);
+				sb.append(", ");
+			}
+			sb.append(elements[size - 1]);
 		}
-		sb.append(elements[size - 1]);
 		sb.append("]");
 		return sb.toString();
 	}
