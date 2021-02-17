@@ -1,26 +1,27 @@
 package com.lucas.datastructure;
 
+import java.util.ArrayList;
+
 import com.lucas.datastructure.arrays.Array;
 
 public class Program {
 
 	public static void main(String[] args) {
 		
-		Array<String> array = new Array<>(0);
+		ArrayList<String> list = new ArrayList<String>();
 		
-		array.add("A");
-		array.add("B");
-		array.add("C");
-		array.add("D");
-		array.add("E");
-		array.add("F");
-		array.add("G");
-		array.add("H");
-		array.add("I");
-		array.add("J");
-		array.add(5, "AQUI");
-		
-		array.trimToSize();
-		
+		list.add("A");
+		list.add("B");
+		list.add("C");
+		list.add("D");
+		list.add("E");
+		list.add("F");
+		list.add("G");
+		list.add("H");
+		list.add("I");
+		list.add("J");
+		list.add(5, "AQUI");
+
+		Array<String> array = new Array<String>(list);
 	}
 }

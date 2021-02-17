@@ -1,6 +1,7 @@
 package com.lucas.datastructure.arrays;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 public class Array<T> implements Serializable {
 
@@ -20,14 +21,23 @@ public class Array<T> implements Serializable {
 		this.elements = (T[]) new Object[capacity];
 	}
 	
+	public Array(Collection<T> collection) {
+		elements = (T[]) new Object[DEFAULT_CAPACITY];
+		for (T c : collection) {
+			add(c);
+		}
+	}
+	
 	public T get(int index) {
 		checkIfTheIndexWasUsed(index);
 		return elements[index];
 	}
 	
-	public void set(int index, T element) {
+	public T set(int index, T element) {
 		checkIfTheIndexWasUsed(index);
+		T result = elements[index];
 		elements[index] = element;
+		return result;
 	}
 	
 	public boolean add(T element) {
