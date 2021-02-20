@@ -32,6 +32,13 @@ public class Array<T> implements Serializable {
 		checkIfTheIndexWasUsed(index);
 		return elements[index];
 	}
+	
+	public Object[] toArray() {
+		int s = size;
+		T[] result = (T[]) new Object[s];
+		System.arraycopy(elements, 0, result, 0, size);
+		return result;
+	}
 
 	public T set(int index, T element) {
 		checkIfTheIndexWasUsed(index);

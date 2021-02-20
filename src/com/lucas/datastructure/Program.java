@@ -24,8 +24,14 @@ public class Program {
 
 		Array<String> array = new Array<String>(list);
 		
-		array.clear();
-		
 		System.out.println(array);
+		
+		Object[] newArray = array.toArray();
+		
+		System.out.println("===========================================");
+		
+		for (int i = 0; i < newArray.length; i++) {
+			System.out.println(newArray[i]);
+		}
 	}
 }
